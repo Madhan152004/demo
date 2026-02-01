@@ -20,7 +20,7 @@ spec:
           disktype: ssd
         containers:
         - name: madhan
-          image: nginx:latest
+          image: nginx:1.29.4
           port:
           - containerPort: 80
         imagePullSecrets:
