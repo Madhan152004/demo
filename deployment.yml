@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: madhan
+  namespace: default
+  labels:
+    app: madhan
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: madhan
+    tenmplate:
+      metadata:
+        labels:
+          app: madhan
+      spec:
+        restartPolicy: Always
+        nodeSelector:
+          disktype: ssd
+        containers:
+        - name: madhan
+          image: nginx:latest
+          port:
+          - containerPort: 80
+        imagePullSecrets:
+        - name: madha
